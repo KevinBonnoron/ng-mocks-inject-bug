@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import { AppComponent, ENVIRONMENT_TOKEN } from './app.component';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    { provide: ENVIRONMENT_TOKEN, useValue: { baseUrl: 'http://localhost:3000' } }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
